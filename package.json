@@ -1,0 +1,21 @@
+{
+  "name": "media_query_events",
+  "version": "2.0.0",
+  "main": "mediaQueryEvents.js",
+  "repository": "git@github.com:frontid/mediaQueryEvents.git",
+  "author": "Marcelo Tosco @capynet <marcelo@front.id>",
+  "license": "MIT",
+  "devDependencies": {},
+  "scripts": {
+    "build": "gulp build",
+    "watch": "gulp watch"
+  },
+  "dependencies": {
+    "del": "^3.0.0",
+    "gulp": "^4.0.0",
+    "gulp-minify": "^3.1.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-uglify": "^3.0.2",
+    "rename": "^1.0.4"
+  }
+}
