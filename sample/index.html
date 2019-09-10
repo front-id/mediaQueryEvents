@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <title>mediaQueryEvents() sample</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- For sample purposes. -->
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
@@ -10,7 +11,7 @@
     <link rel="stylesheet" href="css/sample.css">
 
     <!--Plugin and dependencies.-->
-    <script src="../mediaQueryEvents.jquery.min.js"></script>
+    <script src="../mediaQueryEvents.jquery.js"></script>
     <script src="./js/sample.js"></script>
 </head>
 
@@ -26,11 +27,19 @@
 </div>
 
 <div class="output-container">
-    <div id="output">
 
-        Current breakpoint: <strong class="current-breakpoint">$foo</strong>
-
+    <div class="target">
+            <span>
+                Current breakpoint: <strong class="current-breakpoint"></strong>
+            </span>
     </div>
+
+    <div class="target2">
+            <span>
+                Current breakpoint: <strong class="current-breakpoint"></strong>
+            </span>
+    </div>
+
 </div>
 
 </body>
