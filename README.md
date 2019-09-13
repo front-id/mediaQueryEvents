@@ -14,6 +14,16 @@ Allows any element observe and react when a breakpoint changes.
 const $target = $('.target');
 const $info = $target.find('.current-breakpoint');
 
+// Breakpoints mapping.
+// -------------------------------------
+$target.mediaQueryEvents({
+  breakpoints: {
+    "mob": '(min-width: 0px) and (max-width: 700px)',
+    "somebreakpoint": '(min-width: 701px) and (max-width: 1023px)',
+    "desk": '(min-width: 1024px)'
+  }
+});
+
 // Listeners. You need to prefix them with 'mq.' + breakpoint name.
 // -------------------------------------
 $target.on('mq.mob', function (e) {
@@ -28,13 +38,4 @@ $target.on('mq.desk', function (e) {
   $info.text('desk!');
 });
 
-// Breakpoints mapping.
-// -------------------------------------
-$target.mediaQueryEvents({
-  breakpoints: {
-    "mob": '(min-width: 0px) and (max-width: 700px)',
-    "somebreakpoint": '(min-width: 701px) and (max-width: 1023px)',
-    "desk": '(min-width: 1024px)'
-  }
-});
 ```
