@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>jQuery mediaQueryEvents() sample</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="css/sample.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/github.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+</head>
+
+<body>
+
+<div class="editor-container">
+    <div class="heading">
+        <h1>jQuery mediaQueryEvents() sample</h1>
+        <h2>Allows any element observe and react when a breakpoint changes.</h2>
+        <p>(Resize the browser to see it in action.)</p>
+    </div>
+
+</div>
+
+<div class="output-container">
+
+    <p>Basic usage:</p>
+
+    <pre><code class="xml">
+<script src="../mediaQueryEvents.jquery.js"></script>
+</code></pre>
+
+    <pre><code class="javascript">
+
+// $target = element observing a breakpoint change.
+// -------------------------------------
+const $target = $('.target');
+const $info = $target.find('.current-breakpoint');
+
+// Listeners. You need to prefix them with 'mq.' + breakpoint name.
+// -------------------------------------
+$target.on('mq.mob', function (e) {
+  $info.text('mob!');
+});
+
+$target.on('mq.somebreakpoint', function (e) {
+  $info.text('Another breakpoint!');
+});
+
+$target.on('mq.desk', function (e) {
+  $info.text('desk!');
+});
+
+// Breakpoints mapping.
+// -------------------------------------
+$target.mediaQueryEvents({
+  breakpoints: {
+    "mob": '(min-width: 0px) and (max-width: 700px)',
+    "somebreakpoint": '(min-width: 701px) and (max-width: 1023px)',
+    "desk": '(min-width: 1024px)'
+  }
+});
+
+</code></pre>
+
+    <div class="target">
+            <span>
+                Current breakpoint: <strong class="current-breakpoint"></strong>
+            </span>
+    </div>
+
+    <div class="target2">
+            <span>
+                Current breakpoint: <strong class="current-breakpoint"></strong>
+            </span>
+    </div>
+
+</div>
+
+
+<script>
+  document.querySelectorAll("code").forEach(function (element) {
+    element.innerHTML = element.innerHTML
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
+  });
+</script>
+
+<script src="../mediaQueryEvents.jquery.js"></script>
+<script src="./js/sample.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
