@@ -38,7 +38,11 @@
         // Since the listener will not get triggered
         // on init we make an initial check.
         if (mql.matches) {
-          self._fire(brkNameSpace);
+          // Wait document gets ready and all handlers are
+          // attached to the elements.
+          $(document).ready(function () {
+            self._fire(brkNameSpace);
+          });
         }
 
       }
@@ -49,19 +53,6 @@
       self.$el.trigger('mq.' + brkNameSpace);
     },
 
-    /**
-     * Updated the plugin with new definitions.
-     *
-     * This happens when a dom elements gets this plugin attached more than
-     * once. In this case we just add the new breakpoints to the stack.
-     *
-     * @param options
-     */
-    _update: function (options) {
-      const self = this;
-      this.options = $.extend(self.options, options);
-      self.map();
-    }
 
   };
 

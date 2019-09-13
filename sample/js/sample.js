@@ -1,10 +1,9 @@
 $(function () {
 
+  // Example 1
+  // -------------------------------------------
   const $target = $('.target');
   const $info = $target.find('.current-breakpoint');
-
-  const $target2 = $('.target2');
-  const $info2 = $target2.find('.current-breakpoint');
 
   $target.mediaQueryEvents({
     breakpoints: {
@@ -25,6 +24,11 @@ $(function () {
   $target.on('mq.desk', function (e) {
     $info.text('desk!');
   });
+
+  // Example 2
+  // -------------------------------------------
+  const $target2 = $('.target2');
+  const $info2 = $target2.find('.current-breakpoint');
 
   $target2.mediaQueryEvents({
     breakpoints: {
