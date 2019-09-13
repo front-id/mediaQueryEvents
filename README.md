@@ -1,36 +1,38 @@
 # mediaQueryEvents()
+Allows any element observe and react when a breakpoint changes.
 
 ## Usage
+```
+<script src="../mediaQueryEvents.jquery.js"></script>
+```
+
 ```javascript
-$win.on('mq.mob', function (e) {
-  console.log('mob!');
+// $target = element observing a breakpoint change.
+// -------------------------------------
+const $target = $('.target');
+const $info = $target.find('.current-breakpoint');
+
+// Listeners. You need to prefix them with 'mq.' + breakpoint name.
+// -------------------------------------
+$target.on('mq.mob', function (e) {
+  $info.text('mob!');
 });
 
-$win.on('mq.tab', function (e) {
-  console.log('tab!');
+$target.on('mq.somebreakpoint', function (e) {
+  $info.text('Another breakpoint!');
 });
 
-$win.on('mq.desk', function (e) {
-  console.log('desk!');
+$target.on('mq.desk', function (e) {
+  $info.text('desk!');
 });
 
-
-$win.mediaQueryEvents({
+// Breakpoints mapping.
+// -------------------------------------
+$target.mediaQueryEvents({
   breakpoints: {
-    desk: '(min-width: 1230px)',
-    tab: '(min-width: 768px) and (max-width: 1229px)',
-    mob: '(min-width: 0px) and (max-width: 767px)'
+    "mob": '(min-width: 0px) and (max-width: 700px)',
+    "somebreakpoint": '(min-width: 701px) and (max-width: 1023px)',
+    "desk": '(min-width: 1024px)'
   }
 });
-
-
-      // This needs to be ALWAYS under $el.on('mq.desk') definitions.
-      self.conf.$component.mediaQueryEvents2({
-        breakpoints: {
-          "invest.mob": '(min-width: 0px) and (max-width: 1023px)',
-          "invest.desk": '(min-width: 1024px)'
-        }
-      });
-
-poner un ejemplo para testear.
 ```

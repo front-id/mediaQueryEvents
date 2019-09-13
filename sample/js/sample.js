@@ -6,6 +6,14 @@ $(function () {
   const $target2 = $('.target2');
   const $info2 = $target2.find('.current-breakpoint');
 
+  $target.mediaQueryEvents({
+    breakpoints: {
+      "mob": '(min-width: 0px) and (max-width: 700px)',
+      "somebreakpoint": '(min-width: 701px) and (max-width: 1023px)',
+      "desk": '(min-width: 1024px)'
+    }
+  });
+
   $target.on('mq.mob', function (e) {
     $info.text('mob!');
   });
@@ -16,22 +24,6 @@ $(function () {
 
   $target.on('mq.desk', function (e) {
     $info.text('desk!');
-  });
-
-
-  // Sample 2. much more breakpoints.
-  $target2.on('mq.brk1 mq.brk2 mq.brk3 mq.brk4 mq.brk5 mq.brk6 mq.brk7 mq.brk8 mq.brk9', function (e) {
-    console.log(e);
-    $info2.text(e.namespace);
-  });
-
-
-  $target.mediaQueryEvents({
-    breakpoints: {
-      "mob": '(min-width: 0px) and (max-width: 700px)',
-      "somebreakpoint": '(min-width: 701px) and (max-width: 1023px)',
-      "desk": '(min-width: 1024px)'
-    }
   });
 
   $target2.mediaQueryEvents({
@@ -46,6 +38,22 @@ $(function () {
       "brk8": '(min-width: 1101px) and (max-width: 1200px)',
       "brk9": '(min-width: 1201px)'
     }
+  });
+
+  // Sample 2. much more breakpoints.
+  let sample2Breakpoints = [
+    'mq.brk1',
+    'mq.brk2',
+    'mq.brk3',
+    'mq.brk4',
+    'mq.brk5',
+    'mq.brk6',
+    'mq.brk7',
+    'mq.brk8',
+    'mq.brk9'
+  ];
+  $target2.on(sample2Breakpoints.join(' '), function (e) {
+    $info2.text(e.namespace);
   });
 
 

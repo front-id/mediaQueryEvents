@@ -47,11 +47,6 @@
     _fire: function (brkNameSpace) {
       const self = this;
       self.$el.trigger('mq.' + brkNameSpace);
-
-      console.log('-------------------------');
-      console.log(self.$el);
-      console.log(brkNameSpace);
-      console.log('-------------------------');
     },
 
     /**

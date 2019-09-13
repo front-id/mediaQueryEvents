@@ -23,6 +23,10 @@ body {
     padding: 0;
 }
 
+code, code * {
+    font-family: monospace !important;
+}
+
 .editor-container {
     background: #1f7cd8;
     padding: 30px;
@@ -39,7 +43,6 @@ body {
     margin: 0 auto;
     padding: 30px;
 }
-
 
 .target {
     display: flex;
