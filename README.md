@@ -1,6 +1,8 @@
 # mediaQueryEvents()
 Allows any element observe and react when a breakpoint changes.
 
+## [DEMO](https://frontid.github.io/mediaQueryEvents/)
+
 ## Usage
 ```
 <script src="../mediaQueryEvents.jquery.js"></script>
